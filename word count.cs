@@ -1,32 +1,31 @@
-//word count
-
 using System;
-namespace assignments;
 
-	public class Wordcount
-
+namespace Assignments
 {
-	static void Main(string[] args)
-	{
-	Console.WriteLine("Enter a sentence: ");
-	String input = Console.ReadLine();
-	
-//split sentence into words
+    public class Wordcount
+    {
+        public static void Main()
+        {
 
-	String[] words = input.Split(' ');
+            Console.Write("Enter a sentence: ");
+            string input = Console.ReadLine();
 
-	int wordcount = 0;
-	
-// non empty words are count
+            // Sentence split into words
+            string[] words = input.Split(' ');
 
-	foreach(String word in words)
-	{
-		wordsCount++;
-	}
+            // Count the non-empty words
+
+            int wordCount = 0;
+            foreach (string word in words)
+            {
+                if (!string.IsNullOrWhiteSpace(word))  //empty spaces ignore
+                {
+                    wordCount++;
+                }
+            }
+
+            // Output 
+            Console.WriteLine("Number of words: " + wordCount);
+        }
     }
-	Console.WriteLine("Number of words: " + wordcount);
-	}
 }
- 
-
-
