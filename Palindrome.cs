@@ -2,7 +2,7 @@ using System;
 
 namespace Palindrome
 {
-    class Program
+   public class Program
     {
         static void Main()
         {
@@ -12,7 +12,7 @@ namespace Palindrome
             int original = number;
             int remainder, reverse = 0;
 
-		// To reverse the number
+		// reverse the number
             while (number > 0)
             {
                 remainder = number % 10;
