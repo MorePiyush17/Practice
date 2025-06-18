@@ -45,3 +45,13 @@ namespace BasicStatsCommandLine
         }
     }
 }
+
+//output
+// C:\Users\piyush.more\Desktop\Programs>CommandLineApp.exe 10 20 30 40
+// Count: 4
+// Sum: 100
+// Average: 25
+// Maximum: 40
+// Minimum: 10
+
+// C:\Users\piyush.more\Desktop\Programs>
