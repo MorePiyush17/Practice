@@ -1,0 +1,69 @@
+using System;
+
+namespace NumberGuessingGame
+{
+   public class Program
+    {
+        static void Main()
+        {
+            Random rand = new Random(); // random nos are generated
+            string playAgain = "yes";
+
+            while (playAgain == "yes")
+            {
+                int target = rand.Next(1, 101); //to generate no between 1 to 100
+                int attempts = 0;
+                bool guessedCorrectly = false;
+
+                Console.WriteLine("I have generated a number between 1 to 100.");
+                Console.WriteLine("You have 5 attempts to guess it!");
+
+                while (attempts < 5)
+                {
+                    Console.Write("Guess a number: ");
+                    int guess = Convert.ToInt32(Console.ReadLine()); //user i/p
+                    attempts++;  // for counting each attempts
+
+              // if user guess correct number
+                   if (guess == target)
+                    {
+                        Console.WriteLine("You won in attempt: " + attempts);
+                        guessedCorrectly = true;
+                        break;
+                    }
+                  // guess is low
+                   if (guess < target)
+                    {
+                        Console.WriteLine("Sorry, too low.");
+                    }
+                  // guess is high
+                    if (guess > target)
+                    {
+                        Console.WriteLine("Sorry, too high.");
+                    }
+                }
+                // when all attempts are incorrect 
+                if (!guessedCorrectly)
+                {
+                    Console.WriteLine("You used all attempts. The correct number was: " + target);
+                }
+
+                Console.Write("Do you want to play the game again? (yes/no): ");
+                playAgain = Console.ReadLine().ToLower();
+            }
+
+            Console.WriteLine("Thank you for playing!");
+        }
+    }
+}
+
+// I have generated a number between 1 to 100.
+// You have 5 attempts to guess it!
+// Guess a number: 65
+// Sorry, too low.
+// Guess a number: 85
+// Sorry, too high.
+// Guess a number: 71
+// Sorry, too high.
+// Guess a number: 68
+// You won in attempt: 4
