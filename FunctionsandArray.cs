@@ -3,8 +3,7 @@ using System;
 namespace FunctionsandArray
 {
     class Program
-    {
-        // created function to apply 5% discount if the fee > 7000
+    
         static double[] ApplyDiscount(double[] fees)
         {
             double[] finalFees = new double[fees.Length];
