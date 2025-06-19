@@ -7,7 +7,7 @@ namespace Palindrome
         static void Main()
         {
             Console.WriteLine("Enter a number: ");
-            int number = int.Parse(Console.ReadLine()); //to convert string input to integer
+            int number = int.Parse(Console.ReadLine()); //used to convert string input to integer
 
             int original = number;
             int remainder, reverse = 0;
