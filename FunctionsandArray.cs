@@ -45,7 +45,7 @@ namespace FunctionsandArray
             double[] finalFees = ApplyDiscount(studentFees);
 
           //to display fees after discount
-            Console.WriteLine("\nFees with discount are:");
+            Console.WriteLine("Fees with discount are:");
             for (int i = 0; i < finalFees.Length; i++)
             {
               Console.WriteLine("Student " + (i + 1) + " : " + finalFees[i]);
