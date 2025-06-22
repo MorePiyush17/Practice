@@ -1,13 +1,14 @@
 ﻿namespace TrafficSignal
 {
-    
+
     enum TrafficLight
-    { RED, YELLOW, GREEN
-}
+    {
+        RED, YELLOW, GREEN
+    }
 
     internal class Program
     {
-        
+
         static void DriverAction(TrafficLight signal)
         {
             switch (signal)
@@ -26,7 +27,7 @@
 
         static void Main(string[] args)
         {
-            // Step 3: Example usage
+
             DriverAction(TrafficLight.RED);
             DriverAction(TrafficLight.GREEN);
             DriverAction(TrafficLight.YELLOW);
