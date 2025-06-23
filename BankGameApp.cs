@@ -5,7 +5,7 @@ namespace BankGameApp
     public class BankAccount
     {
         public string AccountHolder { get; }
-        public double Balance { get; private set; } // private set we have used for when only if class should be able to change the name.
+        public double Balance { get; private set; } // private set we have used for when only if class should be able to change the balance.
         
 
         // Constructor for BankAccount
