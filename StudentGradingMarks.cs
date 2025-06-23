@@ -7,7 +7,6 @@ namespace StudentGradingMarks
         public string RollNumber { get; }
         public int[] Marks { get; }
 
-
         public Student(string studentName, string rollNumber, int[] marks)
         {
             if (marks == null || marks.Length != 5)
@@ -26,8 +25,8 @@ namespace StudentGradingMarks
                 sum += mark;
             }
             return sum / Marks.Length;
-
         }
+
         public string CalculateGrade()
         {
             double average = CalculateAverage();
@@ -46,27 +45,33 @@ namespace StudentGradingMarks
             else
                 return "Fail";
         }
-        public override string ToString()
+
+        public void PrintReport()
         {
-            string marksStr = string.Join(", ", Marks);
             double average = CalculateAverage();
             string grade = CalculateGrade();
-
-            return $"Student Report Card\r\nName: {StudentName}\nRoll Number: {RollNumber}\nMarks: {marksStr}\nAverage: {CalculateAverage():F2}\nGrade: {CalculateGrade()}";
+            Console.WriteLine("Student Report Card");
+            Console.WriteLine("----------------------------");
+            Console.WriteLine($"Name        : {StudentName}");
+            Console.WriteLine($"Roll No     : {RollNumber}");
+            Console.WriteLine($"Marks       : [{string.Join(", ", Marks)}]");
+            Console.WriteLine($"Average     : {average:F1}");
+            Console.WriteLine($"Grade       : {grade}");
         }
-
     }
-        internal class Program
+
+    internal class Program
+    {
+        static void Main(string[] args)
         {
+    
+            string name = "Swapnil Kulkarni";
+            string rollNumber = "R102";
+            int[] marks = { 78, 85, 90, 88, 76 };
 
-            static void Main(string[] args)
-            {
-                var student = new Student("Swapnil Kulkarni", "12345", new int[] { 85, 90, 78, 92, 88 });
-
-
-
-                Console.WriteLine(student.ToString());
-            }
+       
+            Student student = new Student(name, rollNumber, marks);
+            student.PrintReport();
         }
     }
-
+}ss
